@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light dark" />
+  <script>/* set theme before paint (no flash) */
+    (function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}
+      if(!t)t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+      document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wania Naeem — UI/UX Designer &amp; Software Engineering Student</title>
+  <meta name="description" content="Portfolio of Wania Naeem — UI/UX Designer and Software Engineering student at SMIU, designing interfaces in Figma." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23171717%22>W</text></svg>">
+
+  <!-- Google Fonts: Poppins (Primary), Playfair Display (Editorial), JetBrains Mono (Technical) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Monochrome Architectural Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       00. Loading Screen (~1s Identity Reveal)
+       ======================================================================== -->
+  <aside class="site-loader" id="siteLoader" aria-label="Loading portfolio experience">
+    <div class="loader-content">
+      <div class="loader-monogram">
+        <span>WANIA</span>
+      </div>
+      <div class="loader-subtext">UI/UX DESIGNER • SMIU • KARACHI</div>
+      <div class="loader-progress-line" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Custom Interactive Cursor (Desktop)
+       ======================================================================== -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true">
+    <span class="cursor-follower-text" id="cursorFollowerText">VIEW</span>
+  </div>
+
+  <!-- Toast Notice (Email Copied / Status) -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    Copied to clipboard!
+  </div>
+
+  <!-- ========================================================================
+       Header & Minimalist Monochrome Navigation
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader" role="banner">
+    <div class="site-wrapper header-container">
+      <a href="#home" class="site-logo" aria-label="Wania Naeem Homepage">
+        <span>WANIA NAEEM</span>
+        <span class="site-logo-tag">/ UI•UX</span>
+      </a>
+
+      <nav class="site-nav" id="primaryNav" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#journey" class="nav-link">Academic Journey</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-extras">
+            <a href="assets/cv/Wania_Naeem_CV_.pdf" class="btn btn--primary" data-cv download="Wania_Naeem_CV_.pdf"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg> Download CV</a>
+            <a href="https://www.linkedin.com/" class="nav-social" data-social="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg> LinkedIn</a>
+            <a href="https://github.com/" class="nav-social" data-social="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg> GitHub</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a href="assets/cv/Wania_Naeem_CV_.pdf" class="btn btn--ghost cv-btn" data-cv download="Wania_Naeem_CV_.pdf" style="padding: 10px 18px; font-size: 0.85rem;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg> CV
+        </a>
+        <a href="#contact" class="btn btn--primary" style="padding: 10px 22px; font-size: 0.85rem;">
+          Let's Talk <span aria-hidden="true">→</span>
+        </a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ======================================================================
+         SECTION 1: HOME — PINNED KINETIC SIGNATURE EXPERIENCE
+         ====================================================================== -->
+    <section class="home-pinned-stage keep-light" id="home" aria-label="Hero Introduction">
+      <!-- Kinetic Typography Layers -->
+      <!--<div class="kinetic-word word-designer" aria-hidden="true">DESIGNER</div>
+      <div class="kinetic-word word-uiux kinetic-word--outline" aria-hidden="true">UI / UX</div>
+      <div class="kinetic-word word-creator" aria-hidden="true">CREATOR</div>
+      <div class="kinetic-word word-thinker" aria-hidden="true">Visual Thinker</div>
+      <div class="kinetic-word word-solver" aria-hidden="true">PROBLEM SOLVER</div> -->
+
+      <!-- Hero scene: TOP layer = Wania's video painted on a canvas (scratched away by the cursor),
+           BOTTOM layer = her "UI/UX design world" (assets/hero/reveal.jpg, or reveal.mp4/.webm if you add one) -->
+      <div class="hero-scene" id="identityCard" role="region" aria-label="Wania Naeem introducing herself. Move your cursor over the hero to scratch the surface and reveal her UI/UX design world.">
+        <!-- hidden source for the bottom layer (reveal.jpg, or reveal.mp4/.webm if you add one) -->
+        <div class="hero-reveal" id="heroReveal" aria-hidden="true">
+          <img class="hero-reveal-media" id="heroRevealImg" src="assets/hero/reveal.jpg" alt="" decoding="async">
+        </div>
+        <canvas class="hero-scratch-canvas" id="heroScratch" aria-hidden="true"></canvas>
+        <video id="heroVideo" class="hero-video-src" muted loop playsinline preload="auto" poster="assets/hero/poster.jpg" aria-label="Wania Naeem, UI/UX Designer, introducing herself">
+          <source src="assets/hero/hero.webm" type="video/webm">
+          <source src="assets/hero/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Bottom layer shown ONLY inside the scratch; sits ABOVE the words so scratched areas show just the image -->
+      <canvas class="hero-reveal-canvas" id="heroRevealCanvas" aria-hidden="true"></canvas>
+
+      <!-- Sound toggle (video starts muted because browsers block autoplay with sound) -->
+      <button type="button" class="hero-sound-btn" id="heroSoundBtn" aria-pressed="false" aria-label="Turn sound on" title="Sound">
+        <svg class="icon-off" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      </button>
+
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-line-indicator"></div>
+      </div>
+    </section>
+
+    <!-- Home extension: continuous UI screens loop (not a separate section) -->
+    <div class="screens-loop" id="screensLoop" aria-label="A loop of UI screens I designed" hidden>
+      <div class="screens-track" id="screensTrack"></div>
+    </div>
+
+    <!-- ======================================================================
+         SECTION 2: ABOUT — EDITORIAL STORYTELLING & REAL IDENTITY
+         ====================================================================== -->
+    <section class="section about-section" id="about" aria-labelledby="aboutTitle">
+      <div class="site-wrapper">
+        <div class="section-kicker">02 / ABOUT</div>
+
+        <div class="about-editorial-grid">
+          <!-- Left Visual: Architectural Silhouette Frame -->
+          <div class="about-visual-column">
+            <div class="about-image-frame" id="aboutImageFrame">
+              <img src="assets/about-portrait.svg" alt="Architectural Portrait Silhouette of Wania Naeem" width="480" height="600" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Right Content: Authentic Narrative & Core Design Pillars -->
+          <div class="about-content-column">
+            <h2 class="about-oversized-title" id="aboutTitle">
+              DESIGNING DIGITAL EXPERIENCES <em>THAT MATTER</em>
+            </h2>
+
+            <p class="about-personal-statement">
+              I'm <strong>Wania Naeem</strong>, a UI/UX designer who is also studying Software Engineering.
+            </p>
+
+            <p class="about-narrative-p">I'm currently pursuing a Bachelors in Software Engineering at Sindh Madressatul Islam University. My main focus is UI/UX design — creating interfaces and visual experiences in Figma, and learning a little more with every screen I design.</p>
+
+            <!-- 4 Design Pillars -->
+            <div class="about-pillars-grid"><div class="about-pillar-card"><h4>01. UI/UX Design</h4><p>Creating clear, easy-to-use interfaces.</p></div><div class="about-pillar-card"><h4>02. Figma</h4><p>My main tool for designing and connecting screens.</p></div><div class="about-pillar-card"><h4>03. Design Thinking</h4><p>Structuring the flow before styling the screen.</p></div><div class="about-pillar-card"><h4>04. Software Engineering</h4><p>A technical background that shapes how I see design.</p></div></div>
+
+            <div class="about-action-group">
+              <a href="#work" class="btn btn--primary">
+                Explore Selected Projects <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: WORK — REAL UI/UX PROJECTS (ALTERNATING SCENES)
+         ====================================================================== -->
+    <section class="section work-section" id="work" aria-labelledby="workTitle">
+      <div class="site-wrapper">
+        <div class="work-header-box">
+          <div class="section-kicker">03 / WORK</div>
+          <h2 class="section-title" id="workTitle">
+            SELECTED <em>WORK</em>
+          </h2>
+        </div>
+
+        <div class="work-projects-list" id="workList"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: ACADEMIC JOURNEY — INTERACTIVE VERTICAL TIMELINE
+         ====================================================================== -->
+    <section class="section journey-section" id="journey" aria-labelledby="journeyTitle">
+      <div class="site-wrapper">
+        <div class="journey-header-box">
+          <div class="section-kicker">04 / ACADEMIC JOURNEY</div>
+          <h2 class="section-title" id="journeyTitle">
+            ACADEMIC <em>JOURNEY</em>
+          </h2>
+        </div>
+
+        <div class="timeline-vertical-wrap">
+          <!-- Dynamic Scroll-Scrubbed Track Line -->
+          <div class="timeline-track-line" aria-hidden="true">
+            <div class="timeline-progress-fill" id="timelineProgressFill"></div>
+          </div>
+          <div id="journeyList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: CONTACT — FINAL SCENE & WORKING FORM
+         ====================================================================== -->
+    <section class="section contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="site-wrapper">
+        <div class="section-kicker">05 / CONTACT</div>
+
+        <div class="contact-scene-grid">
+          <!-- Left Column: Bold Typographic Headline & Live Information -->
+          <div class="contact-info-col">
+            <h2 class="contact-headline-statement" id="contactTitle">
+              LET'S WORK <em>TOGETHER.</em>
+            </h2>
+
+            <p class="contact-intro-body">If you'd like to talk about UI/UX design, a project or an opportunity, feel free to get in touch.</p>
+
+            <div class="contact-info-pills">
+              <!-- Direct Email Copy Button -->
+              <div class="contact-copy-box" id="copyBox" hidden><button class="copy-email-btn" id="copyEmailBtn" aria-label="Copy email address"><span aria-hidden="true">✉</span><span id="emailText"></span><span class="copy-action-text">(Click to copy)</span></button></div>
+
+              <!-- Live Karachi Clock -->
+              <div class="contact-live-clock" id="liveClock" aria-label="Current time in Karachi, Pakistan">
+                <span aria-hidden="true">🕒</span>
+                <span class="clock-time" id="clockTimeDisplay">--:--:-- PKT</span>
+                <span class="clock-zone">(Pakistan Standard Time, GMT+5)</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-social-row">
+              <a href="assets/cv/Wania_Naeem_CV_.pdf" class="btn btn--primary" data-cv download="Wania_Naeem_CV_.pdf" style="padding: 10px 20px; font-size: 0.85rem;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg> Download CV</a>
+              <span class="contact-social-links" id="socialRow"></span>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact-form-box">
+            <form id="contactForm" novalidate aria-label="Send a direct message to Wania Naeem">
+              <div class="form-group">
+                <label for="userName" class="form-label">Your Name</label>
+                <input type="text" id="userName" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail" class="form-label">Email Address</label>
+                <input type="email" id="userEmail" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="userMessage" class="form-label">Message</label>
+                <textarea id="userMessage" name="message" class="form-textarea" placeholder="Write your message here..." required rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn" id="submitBtn">
+                <span>Send Message</span> <span aria-hidden="true">→</span>
+              </button>
+
+              <div class="form-feedback-notice" id="formFeedback" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       ACCESSIBLE CASE STUDY MODAL (<dialog>)
+       ======================================================================== -->
+  <dialog class="case-modal" id="caseStudyModal" aria-labelledby="modalProjectTitle">
+    <div class="modal-header-sticky">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study Modal">
+        ✕
+      </button>
+    </div>
+    <div class="modal-inner-content" id="modalInnerContent">
+      <!-- Populated dynamically via main.js -->
+    </div>
+  </dialog>
+
+  <!-- ========================================================================
+       GSAP 3 & ScrollTrigger CDNs (with fallback support in main.js)
+       ======================================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
