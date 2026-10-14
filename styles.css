@@ -724,6 +724,8 @@ body.has-custom-cursor .cursor-follower {
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 20%;
+  display: block;
   transition: transform var(--trans-slow);
 }
 
