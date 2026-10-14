@@ -80,6 +80,6 @@ window.PORTFOLIO = {
     { n: '02', tag: 'COLLEGE', title: 'Govt. College for Women, Shahrah-e-Liaquat', sub: 'Stream: Pre-Engineering', detail: '' },
     { n: '03', tag: 'UNIVERSITY', title: 'Sindh Madressatul Islam University', sub: 'Bachelors in Software Engineering', detail: 'Currently pursuing' },
     { n: '04', tag: 'UI/UX LEARNING', title: 'Bano Qabil', sub: 'Course: UI/UX Designing', detail: '' },
-    { n: '05', tag: 'UI/UX INTERNSHIP', title: 'BIC SMIU', sub: 'UI/UX Design Intern', detail: 'On-site Internship' }
+    { n: '05', tag: 'UI/UX INTERNSHIP', title: 'Styra', sub: 'Internship in Startup', detail: 'On-site Internship' }
   ]
 };
